@@ -9,6 +9,8 @@ go_library(
         "local_directory_darwin.go",
         "local_directory_disabled.go",
         "local_directory_freebsd.go",
+        "local_directory_linkat_darwin.go",
+        "local_directory_linkat_unix.go",
         "local_directory_linux.go",
         "local_directory_unix.go",
     ],

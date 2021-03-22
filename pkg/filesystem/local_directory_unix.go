@@ -407,7 +407,7 @@ func (d *localDirectory) Apply(arg interface{}) error {
 	switch a := arg.(type) {
 	case localDirectoryLink:
 		defer runtime.KeepAlive(d)
-		return unix.Linkat(a.oldFD, a.oldName.String(), d.fd, a.newName.String(), 0)
+		return d.linkat(a.oldFD, a.oldName.String(), d.fd, a.newName.String(), 0)
 	case localDirectoryRename:
 		defer runtime.KeepAlive(d)
 		return unix.Renameat(a.oldFD, a.oldName.String(), d.fd, a.newName.String())
